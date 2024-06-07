@@ -1,11 +1,11 @@
 import './App.css';
-import FiveDices from './components/five_dices';
+import ScoreBoard from './components/score_board';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <FiveDices />
+        <ScoreBoard dices={[4,4,4,3,3]} />
       </header>
     </div>
   );
