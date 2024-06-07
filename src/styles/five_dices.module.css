@@ -1,0 +1,12 @@
+.allDicesContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.twoDicesContainer {
+    display: flex;
+    flex-direction: vertical;
+    justify-content: space-between;
+}

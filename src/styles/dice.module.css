@@ -1,0 +1,31 @@
+.diceContainer {
+  position: relative;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.diceImage {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  user-select: none;
+}
+
+.iconContainer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+}
+
+.lockIcon {
+  font-size: 24px;
+  color: rgb(197, 0, 0);
+}
+
+.lockOpenIcon {
+  font-size: 24px;
+  color: rgb(0, 197, 0);
+}
