@@ -1,11 +1,11 @@
 import './App.css';
-import FiveDices from './components/five_dices';
+import Game from './components/game';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <FiveDices />
+        <Game />
       </header>
     </div>
   );
