@@ -22,4 +22,10 @@
 
 .lockIcon {
   font-size: 24px;
+  color: rgb(197, 0, 0);
+}
+
+.lockOpenIcon {
+  font-size: 24px;
+  color: rgb(0, 197, 0);
 }

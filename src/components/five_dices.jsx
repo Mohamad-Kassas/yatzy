@@ -30,6 +30,12 @@ function FiveDices() {
     setDices(newDices)
   }
 
+  const toggleKeep = (index) => {
+    const newKeep = [...keep]
+    newKeep[index] = !newKeep[index]
+    setKeep(newKeep)
+  }
+
   return (
     <div>
       <button onClick={roll}>Roll</button>
@@ -39,28 +45,33 @@ function FiveDices() {
             diceImage={getDiceImage(dices[0])}
             dice={dices[0]}
             keep={keep[0]}
+            toggleKeep={() => toggleKeep(0)}
           />
           <Dice
             diceImage={getDiceImage(dices[1])}
             dice={dices[1]}
             keep={keep[1]}
+            toggleKeep={() => toggleKeep(1)}
           />
         </div>
         <Dice
           diceImage={getDiceImage(dices[2])}
           dice={dices[2]}
           keep={keep[2]}
+            toggleKeep={() => toggleKeep(2)}
         />
         <div className={styles.twoDiceContainer}>
           <Dice
             diceImage={getDiceImage(dices[3])}
             dice={dices[3]}
             keep={keep[3]}
+            toggleKeep={() => toggleKeep(3)}
           />
           <Dice
             diceImage={getDiceImage(dices[4])}
             dice={dices[4]}
             keep={keep[4]}
+            toggleKeep={() => toggleKeep(4)}
           />
         </div>
       </div>

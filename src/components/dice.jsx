@@ -1,13 +1,17 @@
-import React from "react";
-import styles from "../styles/dice.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock } from "@fortawesome/free-solid-svg-icons";
+import React from "react"
+import styles from "../styles/dice.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons"
 
-function Dice({ diceImage, dice, keep }) {
+function Dice({ diceImage, dice, keep, toggleKeep }) {
   return (
-    <div className={styles.diceContainer}>
+    <div className={styles.diceContainer} onClick={toggleKeep}>
       <div className={styles.iconContainer}>
-        <FontAwesomeIcon icon={faLock} className={styles.lockIcon} />
+        {keep ? (
+          <FontAwesomeIcon icon={faLock} className={styles.lockIcon} />
+        ) : (
+          <FontAwesomeIcon icon={faLockOpen} className={styles.lockOpenIcon} />
+        )}
       </div>
       <img
         className={styles.diceImage}
@@ -16,7 +20,7 @@ function Dice({ diceImage, dice, keep }) {
         draggable="false"
       />
     </div>
-  );
+  )
 }
 
-export default Dice;
+export default Dice
