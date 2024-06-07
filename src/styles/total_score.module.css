@@ -1,0 +1,16 @@
+.totalScoreContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border-bottom: 4px solid #bd9c7a;
+}
+
+.text {
+  font-size: 1rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: #28374a;
+}
