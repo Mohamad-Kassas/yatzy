@@ -1,11 +1,11 @@
 import './App.css';
-import ScoreBoard from './components/score_board';
+import Game from './components/game';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ScoreBoard dices={[4,4,4,3,3]} />
+        <Game />
       </header>
     </div>
   );
