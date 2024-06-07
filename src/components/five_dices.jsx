@@ -2,12 +2,12 @@ import React, { useState } from "react"
 import Dice from "./dice"
 import styles from "../styles/five_dices.module.css"
 
-import side1 from "../docs/design_system/dice images/side 1.png"
-import side2 from "../docs/design_system/dice images/side 2.png"
-import side3 from "../docs/design_system/dice images/side 3.png"
-import side4 from "../docs/design_system/dice images/side 4.png"
-import side5 from "../docs/design_system/dice images/side 5.png"
-import side6 from "../docs/design_system/dice images/side 6.png"
+import side1 from "../docs/design_system/Dice Images/side 1.png"
+import side2 from "../docs/design_system/Dice Images/side 2.png"
+import side3 from "../docs/design_system/Dice Images/side 3.png"
+import side4 from "../docs/design_system/Dice Images/side 4.png"
+import side5 from "../docs/design_system/Dice Images/side 5.png"
+import side6 from "../docs/design_system/Dice Images/side 6.png"
 
 function FiveDices() {
   const [dices, setDices] = useState([0, 0, 0, 0, 0])

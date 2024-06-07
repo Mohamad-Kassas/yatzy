@@ -1,0 +1,13 @@
+.gameboardContainer {
+    height: 100vh;
+    width: 61.4vw;
+    background-image: url("../docs/design_system/Gameboard\ Background.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
