@@ -100,7 +100,6 @@ The game state is managed using React's `useState` and `useEffect` hooks. Some k
 
 ### Examples of various states of the game:
 <br>
-<br>
 
 - Game Not Started (Welcome Screen)
 <img width="1667" alt="Screen Shot 2024-06-08 at 4 42 30 PM" src="https://github.com/Mohamad-Kassas/yatzy/assets/113208914/4f5e102b-d328-4ae0-93e9-59b7c4231b45">
