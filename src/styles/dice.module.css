@@ -2,12 +2,14 @@
   position: relative;
   padding: 15px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .diceImage {
-  display: block;
-  width: 100px;
-  height: 100px;
+  width: 60%;
+  height: auto;
   margin: 10px;
   user-select: none;
 }
@@ -21,11 +23,11 @@
 }
 
 .lockIcon {
-  font-size: 24px;
+  font-size: 5vh;
   color: #b60223;
 }
 
 .lockOpenIcon {
-  font-size: 24px;
+  font-size: 5vh;
   color: #09bc8a;
 }

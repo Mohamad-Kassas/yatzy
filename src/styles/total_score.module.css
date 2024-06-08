@@ -1,15 +1,16 @@
 .totalScoreContainer {
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 4vw;
+  padding-right: 4vw;
   border-bottom: 4px solid #bd9c7a;
 }
 
 .text {
-  font-size: 1rem;
+  font-size: 2.5vh;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
   color: #28374a;
