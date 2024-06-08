@@ -1,4 +1,31 @@
-.gameContainer{
-    height: 100vh;
-    width: 100vw;
+.backgroundContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgrey;
+  box-sizing: border-box;
+  padding: 20px;
+  background-image: url("../docs/design_system/wood.png");
+  background-size: 400px 250px;
+}
+
+.gameContainer {
+  display: flex;
+  aspect-ratio: 774 / 406;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gameboardContainer {
+  flex: 0 0 70%;
+}
+
+.scoreboardContainer {
+  flex: 0 0 30%;
 }

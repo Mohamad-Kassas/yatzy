@@ -1,6 +1,6 @@
 .gameboardContainer {
-    height: 100vh;
-    width: 61.4vw;
+    height: 100%;
+    width: 100%;
     background-image: url("../docs/design_system/Gameboard\ Background.jpg");
     background-repeat: no-repeat;
     background-size: contain;
