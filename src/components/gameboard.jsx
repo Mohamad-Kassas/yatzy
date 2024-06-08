@@ -27,26 +27,35 @@ function Gameboard() {
     setKeep(newKeep)
   }
 
-  return welcomeHasShown ? (
+  const startButtonClick = () => {
+    roll()
+    setWelcomeHasShown(true)
+  }
+
+  return (
     <div className={styles.gameboardContainer}>
-      <FiveDice dices={dices} keep={keep} toggleKeep={toggleKeep} />
-      <button className={styles.rollButton} onClick={roll}>
-        Roll ({rollsLeft}/2)
-      </button>
-    </div>
-  ) : (
-    <div className={styles.gameboardContainer}>
-      <h1 className={styles.welcomeHeader}>Welcome to Yatzy!</h1>
-      <p className={styles.introText}>
-        Click the "Start" button to start the game. You can click on the dices
-        to keep them. You have 2 rolls in total.
-      </p>
-      <button
-        className={styles.rollButton}
-        onClick={() => {roll(); setWelcomeHasShown(true)}}
-      >
-        Start
-      </button>
+      {welcomeHasShown ? (
+        <>
+          <FiveDice dices={dices} keep={keep} toggleKeep={toggleKeep} />
+          <button className={styles.rollButton} onClick={roll}>
+            Roll ({rollsLeft}/2)
+          </button>
+        </>
+      ) : (
+        <>
+          <h1 className={styles.welcomeHeader}>Welcome to Yatzy!</h1>
+          <p className={styles.introText}>
+            Click the "Start" button to start the game. You can click on the
+            dices to keep them. You have 2 rolls in total.
+          </p>
+          <button
+            className={styles.rollButton}
+            onClick={() => startButtonClick()}
+          >
+            Start
+          </button>
+        </>
+      )}
     </div>
   )
 }
