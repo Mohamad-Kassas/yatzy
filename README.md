@@ -98,7 +98,7 @@ These components work together to provide a seamless and interactive user experi
 
 This repository documents the design system for the Yatzy game website.
 
-[Design System](docs/design_system.md)
+[Design System](./src/docs/design_system.md)
 
 ### State Management
 
