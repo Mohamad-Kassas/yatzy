@@ -1,20 +1,20 @@
-import React from "react"
-import Dice from "./dice"
-import styles from "../styles/five_dices.module.css"
+import React from "react";
+import Dice from "./dice";
+import styles from "../styles/five_dices.module.css";
 
-import side1 from "../docs/design_system/Dice Images/side 1.png"
-import side2 from "../docs/design_system/Dice Images/side 2.png"
-import side3 from "../docs/design_system/Dice Images/side 3.png"
-import side4 from "../docs/design_system/Dice Images/side 4.png"
-import side5 from "../docs/design_system/Dice Images/side 5.png"
-import side6 from "../docs/design_system/Dice Images/side 6.png"
+import side1 from "../docs/design_system/Dice Images/side 1.png";
+import side2 from "../docs/design_system/Dice Images/side 2.png";
+import side3 from "../docs/design_system/Dice Images/side 3.png";
+import side4 from "../docs/design_system/Dice Images/side 4.png";
+import side5 from "../docs/design_system/Dice Images/side 5.png";
+import side6 from "../docs/design_system/Dice Images/side 6.png";
 
 function FiveDices({ dices, keep, toggleKeep }) {
-  const diceImages = [side1, side2, side3, side4, side5, side6]
+  const diceImages = [side1, side2, side3, side4, side5, side6];
 
   const getDiceImage = (dice) => {
-    return diceImages[dice - 1]
-  }
+    return diceImages[dice - 1];
+  };
 
   return (
     <div>
@@ -57,7 +57,7 @@ function FiveDices({ dices, keep, toggleKeep }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default FiveDices
+export default FiveDices;

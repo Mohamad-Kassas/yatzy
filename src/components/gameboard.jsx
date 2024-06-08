@@ -1,8 +1,16 @@
-import React from "react"
-import FiveDice from "./five_dices"
-import styles from "../styles/gameboard.module.css"
+import React from "react";
+import FiveDice from "./five_dices";
+import styles from "../styles/gameboard.module.css";
 
-function Gameboard({ dices, keep, rollsLeft, welcomeHasShown, roll, toggleKeep, startButtonClick}) {
+function Gameboard({
+  dices,
+  keep,
+  rollsLeft,
+  welcomeHasShown,
+  roll,
+  toggleKeep,
+  startButtonClick,
+}) {
   return (
     <div className={styles.gameboardContainer}>
       {welcomeHasShown ? (
@@ -28,7 +36,7 @@ function Gameboard({ dices, keep, rollsLeft, welcomeHasShown, roll, toggleKeep, 
         </>
       )}
     </div>
-  )
+  );
 }
 
-export default Gameboard
+export default Gameboard;

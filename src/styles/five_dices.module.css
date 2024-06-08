@@ -1,7 +1,7 @@
 .allDicesContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-    margin-left: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin-left: 10%;
 }
