@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ScoreEntry from "./score_entry";
 import TotalScore from "./total_score";
+import styles from "../styles/score_board.module.css";
 
-function ScoreBoard({ dices }) {
+function ScoreBoard({ dices, resetTurnFunction, endGameFunction }) {
   const [bonusScore, setBonusScore] = useState(null);
   const [totalScore, setTotalScore] = useState(null);
 
@@ -147,7 +148,7 @@ function ScoreBoard({ dices }) {
       counts[dice] = (counts[dice] || 0) + 1;
     });
 
-    if (Object.keys(counts).length === 1) {
+    if (Object.keys(counts).length === 1 && dices[0] !== 0) {
       return 50;
     }
 
@@ -203,11 +204,12 @@ function ScoreBoard({ dices }) {
         Object.values(scores).reduce((acc, score) => acc + score[0], 0) +
           bonusScore
       );
+      endGameFunction();
     }
   }, [scores]);
 
   return (
-    <div>
+    <div className={styles.scoreBoard}>
       {Object.keys(scores).map((key) => (
         <ScoreEntry
           key={key}
@@ -216,6 +218,7 @@ function ScoreBoard({ dices }) {
           finalScore={scores[key][0]}
           handleClick={() => {
             scores[key][0] = scores[key][1];
+            resetTurnFunction();
           }}
         />
       ))}
