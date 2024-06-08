@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/score_entry.module.css";
+import styles from "../styles/scoreEntry.module.css";
 
 function ScoreEntry({ name, score, finalScore, handleClick, welcomeHasShown }) {
   const [isClicked, setIsClicked] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import Dice from "./dice";
-import styles from "../styles/five_dices.module.css";
+import styles from "../styles/fiveDices.module.css";
 
 import side1 from "../docs/design_system/Dice Images/side 1.png";
 import side2 from "../docs/design_system/Dice Images/side 2.png";

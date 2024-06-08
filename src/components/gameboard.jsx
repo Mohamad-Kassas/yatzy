@@ -1,6 +1,6 @@
 import React from "react";
-import FiveDice from "./five_dices";
-import styles from "../styles/gameboard.module.css";
+import FiveDice from "./fiveDices";
+import styles from "../styles/gameBoard.module.css";
 
 function Gameboard({
   dices,

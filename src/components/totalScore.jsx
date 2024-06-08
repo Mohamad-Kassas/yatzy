@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/total_score.module.css";
+import styles from "../styles/totalScore.module.css";
 
 function TotalScore({ name, score }) {
   return (

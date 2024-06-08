@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ScoreEntry from "./score_entry";
-import TotalScore from "./total_score";
-import styles from "../styles/score_board.module.css";
+import ScoreEntry from "./scoreEntry";
+import TotalScore from "./totalScore";
+import styles from "../styles/scoreBoard.module.css";
 
 function ScoreBoard({
   scores,

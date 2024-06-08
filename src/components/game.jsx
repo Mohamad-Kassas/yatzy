@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Gameboard from "./gameboard";
-import Scoreboard from "./score_board";
+import Gameboard from "./gameBoard";
+import Scoreboard from "./scoreBoard";
 import styles from "../styles/game.module.css";
 
 function Game() {
@@ -179,8 +179,10 @@ function Game() {
       counts[dice] = (counts[dice] || 0) + 1;
     });
 
-    if (Object.keys(counts).length === 2) {
-      return dices.reduce((acc, dice) => acc + dice);
+    const values = Object.values(counts);
+
+    if (values.length === 2 && values.includes(3) && values.includes(2)) {
+      return dices.reduce((acc, dice) => acc + dice, 0);
     }
 
     return 0;
@@ -192,13 +194,15 @@ function Game() {
   };
 
   // Adds 50 if all dices are the same
-  const yatzy = () => {
+  const yatzy = (dices = [0, 0, 0, 0, 0]) => {
     const counts = {};
     dices.forEach((dice) => {
       counts[dice] = (counts[dice] || 0) + 1;
     });
 
-    if (Object.keys(counts).length === 1 && dices[0] !== 0) {
+    const values = Object.values(counts);
+
+    if (Object.keys(counts).length === 1 && dices[0] && values.includes(5)) {
       return 50;
     }
 
