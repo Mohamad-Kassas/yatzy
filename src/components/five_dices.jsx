@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Dice from "./dice"
 import styles from "../styles/five_dices.module.css"
 
@@ -9,7 +9,7 @@ import side4 from "../docs/design_system/Dice Images/side 4.png"
 import side5 from "../docs/design_system/Dice Images/side 5.png"
 import side6 from "../docs/design_system/Dice Images/side 6.png"
 
-function FiveDices({ dices, keep, toggleKeep}) {
+function FiveDices({ dices, keep, toggleKeep }) {
   const diceImages = [side1, side2, side3, side4, side5, side6]
 
   const getDiceImage = (dice) => {
@@ -19,7 +19,7 @@ function FiveDices({ dices, keep, toggleKeep}) {
   return (
     <div>
       <div className={styles.allDicesContainer}>
-        <div className={styles.twoDiceContainer}>
+        <div>
           <Dice
             diceImage={getDiceImage(dices[0])}
             dice={dices[0]}
@@ -33,13 +33,15 @@ function FiveDices({ dices, keep, toggleKeep}) {
             toggleKeep={() => toggleKeep(1)}
           />
         </div>
-        <Dice
-          diceImage={getDiceImage(dices[2])}
-          dice={dices[2]}
-          keep={keep[2]}
+        <div>
+          <Dice
+            diceImage={getDiceImage(dices[2])}
+            dice={dices[2]}
+            keep={keep[2]}
             toggleKeep={() => toggleKeep(2)}
-        />
-        <div className={styles.twoDiceContainer}>
+          />
+        </div>
+        <div>
           <Dice
             diceImage={getDiceImage(dices[3])}
             dice={dices[3]}
