@@ -15,12 +15,19 @@ This document outlines the design system for the project.
 
 ## Components
 
-### Custom Component
+### Custom Components
+<br>
 
-![Game Board](assets/design_system/gameBoard.png)
+#### Game Board
+<br>
 
-![Score Board](assets/design_system/scoreBoard.png)
+![Game Board](./design_system/gameBoard.png)
+
+#### Score Board
+<br>
+
+![Score Board](./design_system/scoreBoard.png)
 
 ### Welcome Screen
 
-![Welcome Screen](assets/design_system/welcomeScreen.png)
+![Welcome Screen](./design_system/welcomeScreen.png)
