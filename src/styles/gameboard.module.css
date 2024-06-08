@@ -2,13 +2,13 @@
     height: 100%;
     width: 100%;
     background-image: url("../docs/design_system/Gameboard\ Background.jpg");
-    background-repeat: no-repeat;
+    background-repeat:repeat-y;
     background-size: contain;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #e5eafa;
   }
@@ -17,10 +17,10 @@
 .rollButton {
   background-color: #bd9c7a;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.2rem;
-  padding: 15px 25px;
+  font-size: 4vh;
+  padding: 3vh 2vw;
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 30px;
   box-sizing: border-box;
   cursor: pointer;
   text-align: center;
@@ -40,8 +40,14 @@
   transform: translateY(0);
 }
 
+.welcomeHeader {
+  text-align: center;
+  top: 0;
+  margin: 0;
+}
+
 .introText {
   font-size: 1rem;
-  padding: 0px 100px 50px 100px;
+  padding: 0% 12% 0% 12%;
   text-align: center;
 }

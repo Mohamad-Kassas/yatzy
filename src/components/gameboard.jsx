@@ -1,9 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import FiveDice from "./five_dices"
 import styles from "../styles/gameboard.module.css"
 
 function Gameboard({ dices, keep, rollsLeft, welcomeHasShown, roll, toggleKeep, startButtonClick}) {
-
   return (
     <div className={styles.gameboardContainer}>
       {welcomeHasShown ? (

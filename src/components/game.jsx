@@ -48,7 +48,7 @@ function Game() {
         </div>
 
         <div className={styles.scoreboardContainer}>
-          <Scoreboard dices={[0, 0, 0, 0, 0]} />
+          <Scoreboard dices={dices} />
         </div>
       </div>
     </div>
