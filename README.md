@@ -34,7 +34,9 @@ The objective of Yatzy is to score the most points by rolling five dice and maki
 
 ### Prerequisites
 
-- Node.js and npm (Node Package Manager)
+- Node.js and npm (Node Package Manager) installed
+- React.js installed
+- Font Awesome installed
 
 ### Installation
 
@@ -49,6 +51,16 @@ The objective of Yatzy is to score the most points by rolling five dice and maki
 
 ```bash
   npm install
+```
+
+```bash
+npm install react-scripts@latest
+```
+
+```bash
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/react-fontawesome
 ```
 
 3. Start the development server:
