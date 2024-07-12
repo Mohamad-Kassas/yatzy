@@ -25,6 +25,18 @@ function Game() {
       Chance: [null, 0, "chance"],
       Yatzy: [null, 0, "yatzy"],
     },
+    leaderboard: {
+      1: 0,
+      2: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+      6: 0,
+      7: 0,
+      8: 0,
+      9: 0,
+      10: 0
+    },
     bonusScore: null,
     totalScore: null,
     welcomeHasShown: false,
@@ -94,6 +106,15 @@ function Game() {
             totalScore={gameState.totalScore}
             welcomeHasShown={gameState.welcomeHasShown}
             handleClick={handleClick}
+            isLeaderboard={false}
+          />
+        </div>
+        <div className={styles.leaderboardContainer}>
+          <Scoreboard
+            scores={gameState.leaderboard}
+            welcomeHasShown={gameState.welcomeHasShown}
+            handleClick={() => {}}
+            isLeaderboard={true}
           />
         </div>
       </div>

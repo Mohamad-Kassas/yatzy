@@ -6,8 +6,10 @@ header("Access-Control-Allow-Origin: http://localhost:3000");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Headers: Content-Type");
 
-// Function to initialize the game and reset the game state
+// Function to initialize the game and reset the game state, whilst keeping the leaderboard
 function initializeGame() {
+    $leaderboard = $_SESSION['game_state']['leaderboard'];
+
     $_SESSION['game_state'] = [
         'dices' => [0, 0, 0, 0, 0],
         'keep' => [false, false, false, false, false],
@@ -29,10 +31,26 @@ function initializeGame() {
             'Chance' => [null, 0, 'chance'],
             'Yatzy' => [null, 0, 'yatzy']
         ],
+        'leaderboard' => [
+            1 => 0,
+            2 => 0,
+            3 => 0,
+            4 => 0,
+            5 => 0,
+            6 => 0,
+            7 => 0,
+            8 => 0,
+            9 => 0,
+            10 => 0
+        ],
         'bonusScore' => null,
         'totalScore' => null,
         'welcomeHasShown' => true
     ];
+
+    if (isset($leaderboard)) {
+        $_SESSION['game_state']['leaderboard'] = $leaderboard;
+    }
 }
 
 // Function to start the game, by initializing the state and rolling the dices for the first time
@@ -109,11 +127,28 @@ function checkTotalScore($scores) {
     endGame($_SESSION['game_state']['totalScore']);
 }
 
+// Function to update the leaderboard when the game ends
+function updateLeaderboard($totalScore) {
+    $leaderboard = $_SESSION['game_state']['leaderboard'];
+
+    foreach ($leaderboard as $key => $value) {
+        if ($totalScore > $value) {
+            $temp = $value;
+            $leaderboard[$key] = $totalScore;
+            $totalScore = $temp;
+        }
+    }
+
+    $_SESSION['game_state']['leaderboard'] = $leaderboard;
+}
+
 // Function to end the game and show the total score
 function endGame($totalScore) {
     initializeGame();
     $_SESSION['game_state']['totalScore'] = $totalScore;
-    $_SESSION['game_state']['welcomeHasShown'] = false;}
+    $_SESSION['game_state']['welcomeHasShown'] = false;
+    updateLeaderboard($totalScore);
+}
 
 // Function to reset the turn
 function resetTurnFunction() {
