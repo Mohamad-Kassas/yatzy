@@ -143,6 +143,166 @@ function handleClick($key) {
 
 
 
+/* Scoring functions */
+
+// Adds the sum of all ones
+function ones($dices = [0, 0, 0, 0, 0]) {
+    return count(array_filter($dices, function($dice) {
+        return $dice === 1;
+    }));
+}
+
+// Adds the sum of all twos
+function twos($dices = [0, 0, 0, 0, 0]) {
+    return count(array_filter($dices, function($dice) {
+        return $dice === 2;
+    })) * 2;
+}
+
+// Adds the sum of all threes
+function threes($dices = [0, 0, 0, 0, 0]) {
+    return count(array_filter($dices, function($dice) {
+        return $dice === 3;
+    })) * 3;
+}
+
+// Adds the sum of all fours
+function fours($dices = [0, 0, 0, 0, 0]) {
+    return count(array_filter($dices, function($dice) {
+        return $dice === 4;
+    })) * 4;
+}
+
+// Adds the sum of all fives
+function fives($dices = [0, 0, 0, 0, 0]) {
+    return count(array_filter($dices, function($dice) {
+        return $dice === 5;
+    })) * 5;
+}
+
+// Adds the sum of all sixes
+function sixes($dices = [0, 0, 0, 0, 0]) {
+    return count(array_filter($dices, function($dice) {
+        return $dice === 6;
+    })) * 6;
+}
+
+// Adds the sum of the highest pair
+function onePair($dices = [0, 0, 0, 0, 0]) {
+    $counts = array_count_values($dices);
+    $max = 0;
+
+    foreach ($counts as $key => $count) {
+        if ($count >= 2) {
+            $max = max($max, $key);
+        }
+    }
+
+    return $max * 2;
+}
+
+// Adds the sum of the two pairs
+function twoPairs($dices = [0, 0, 0, 0, 0]) {
+    $counts = array_count_values($dices);
+    $sum = 0;
+    $pairs = 0;
+
+    foreach ($counts as $key => $count) {
+        if ($count >= 2) {
+            $sum += $key * 2;
+            $pairs++;
+        }
+    }
+
+    return $pairs === 2 ? $sum : 0;
+}
+
+// Adds the sum of the three of a kind
+function threeOfAKind($dices = [0, 0, 0, 0, 0]) {
+    $counts = array_count_values($dices);
+
+    foreach ($counts as $key => $count) {
+        if ($count >= 3) {
+            return $key * 3;
+        }
+    }
+
+    return 0;
+}
+
+// Adds the sum of the four of a kind
+function fourOfAKind($dices = [0, 0, 0, 0, 0]) {
+    $counts = array_count_values($dices);
+
+    foreach ($counts as $key => $count) {
+        if ($count >= 4) {
+            return $key * 4;
+        }
+    }
+
+    return 0;
+}
+
+// Adds 15 if the dices are a small straight (1, 2, 3, 4, 5)
+function smallStraight($dices = [0, 0, 0, 0, 0]) {
+    $counts = array_count_values($dices);
+
+    if (isset($counts[1]) && isset($counts[2]) && isset($counts[3]) && isset($counts[4]) && isset($counts[5])) {
+        return 15;
+    }
+
+    return 0;
+}
+
+// Adds 15 if the dices are a large straight (2, 3, 4, 5, 6)
+function largeStraight($dices = [0, 0, 0, 0, 0]) {
+    $counts = array_count_values($dices);
+
+    if (isset($counts[2]) && isset($counts[3]) && isset($counts[4]) && isset($counts[5]) && isset($counts[6])) {
+        return 15;
+    }
+
+    return 0;
+}
+
+// Adds the sum of the full house (three of a kind and a pair)
+function fullHouse($dices = [0, 0, 0, 0, 0]) {
+    $counts = array_count_values($dices);
+    $values = array_values($counts);
+
+    if (count($values) === 2 && in_array(3, $values) && in_array(2, $values)) {
+        return array_sum($dices);
+    }
+
+    return 0;
+}
+
+// Adds the sum of all dices
+function chance($dices = [0, 0, 0, 0, 0]) {
+    return array_sum($dices);
+}
+
+// Adds 50 if all dices are the same
+function yatzy($dices = [0, 0, 0, 0, 0]) {
+    $counts = array_count_values($dices);
+
+    if (count($counts) === 1 && isset($dices[0]) && $counts[$dices[0]] === 5) {
+        return 50;
+    }
+
+    return 0;
+}
+
+// Function to calculate the bonus
+function bonus($scores) {
+    $sum = $scores['Ones'][0] + $scores['Twos'][0] + $scores['Threes'][0] + $scores['Fours'][0] + $scores['Fives'][0] + $scores['Sixes'][0];
+    return $sum >= 63 ? 50 : 0;
+}
+
+/* End of scoring functions */
+
+
+
 /* Main logic */
 // Fetching the action, the index and the key from the GET request
 $action = $_GET['action'];
