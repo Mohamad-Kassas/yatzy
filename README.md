@@ -36,7 +36,7 @@ The objective of Yatzy is to score the most points by rolling five dice and maki
 
 - Node.js and npm (Node Package Manager) installed
 - React.js installed
-- Font Awesome installed
+- PHP installed
 
 ### Installation
 
@@ -69,19 +69,25 @@ npm install --save @fortawesome/react-fontawesome
   npm start
 ```
 
-5. Open your browser and navigate to http://localhost:3000 to play the game.
+4. Start the PHP server
+
+```bash
+php -S localhost:8000
+```
+
+6. Open your browser and navigate to http://localhost:3000 to play the game. Ensure cookies are enabled so PHP can communicate correctly with the display.
 
 ## Features
 
 - **User-Friendly Interface**: Intuitive design for easy gameplay.
 - **Responsive Design**: Adapts to different screen sizes for a smooth experience on any desktop/laptop of the user's choice.
-- **Score Tracking**: Automatically calculates and updates scores for each category.
+- **Score Tracking**: Automatically calculates and updates scores for each category and leaderboard.
 
 ## Implementation
 
 ### Technology Stack
 
-HTML, CSS, JavaScript (React.js)
+HTML, CSS, JavaScript (React.js), PHP
 
 ### React Components
 
@@ -103,9 +109,13 @@ The website is built using React components. Each component represents a specifi
    - Allows user to keep or re-roll dice.
    - Provides buttons for rolling dice
    - Displays the number of rolls left.
+  
+4. **LeaderBoard Component**
 
-These components work together to provide a seamless and interactive user experience. The Game component serves as the main container that combines all other components, ensuring that the game state is managed efficiently and that user interactions are handled properly.
+   - Displays the top ten scores
+   - Persists once a session has begun
 
+These components work together to provide a seamless and interactive user experience. The Game component serves as the main container that combines all other components.
 ### Design System
 
 This repository documents the design system for the Yatzy game website.
@@ -114,33 +124,38 @@ This repository documents the design system for the Yatzy game website.
 
 ### State Management
 
-The game state is managed using React's `useState` and `useEffect` hooks. Some key state variables include:
+The game state is managed using the PHP session:
 
 - `dices`: An array representing the current values of the five dice.
 - `keep`: An array of booleans indicating which dice are kept.
 - `rollsLeft`: The number of rolls left in the current turn.
 - `scores`: An object tracking the scores for each category.
+- `leaderboard`: An object tracking the top ten scores
 
+  
 ### Examples of various states of the game:
 
 <br>
 
 - Game Not Started (Welcome Screen)
-  <img width="1667" alt="Screen Shot 2024-06-08 at 4 42 30 PM" src="https://github.com/Mohamad-Kassas/yatzy/assets/113208914/4f5e102b-d328-4ae0-93e9-59b7c4231b45">
+  
+  ![image](https://github.com/user-attachments/assets/98ec88fb-7bea-44ec-9bc5-ab69ff987547)
   <br>
   <br>
   <br>
   <br>
 
 - During Game
-  <img width="1668" alt="Screen Shot 2024-06-08 at 4 55 08 PM" src="https://github.com/Mohamad-Kassas/yatzy/assets/113208914/7200b75b-37ef-4792-8973-8ae29d2bbe0e">
+  
+  ![image](https://github.com/user-attachments/assets/ba34e3df-dc1d-4d4a-84c5-81e264e06025)
   <br>
   <br>
   <br>
   <br>
 
 - End of Game
-  <img width="1660" alt="Screen Shot 2024-06-08 at 4 57 04 PM" src="https://github.com/Mohamad-Kassas/yatzy/assets/113208914/658a77f6-04d1-45eb-9704-1f96a6561a53">
+  
+  ![image](https://github.com/user-attachments/assets/10de40f2-54b7-46a2-a92b-f66c817dc9a1)
   <br>
   <br>
 
