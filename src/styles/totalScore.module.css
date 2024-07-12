@@ -4,8 +4,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  padding-left: 4vw;
-  padding-right: 4vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
   border-bottom: 4px solid #bd9c7a;
 }
 
@@ -14,4 +14,5 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
   color: #28374a;
+  user-select: none;
 }

@@ -1,22 +1,33 @@
-import React, { useEffect, useState } from "react";
-import styles from "../styles/scoreEntry.module.css";
+import React, { useEffect, useState } from "react"
+import styles from "../styles/scoreEntry.module.css"
 
-function ScoreEntry({ name, score, finalScore, handleClick, welcomeHasShown }) {
-  const [isClicked, setIsClicked] = useState(false);
+function ScoreEntry({
+  name,
+  score,
+  finalScore,
+  handleClick,
+  welcomeHasShown,
+  isLeaderboard,
+}) {
+  const [isClicked, setIsClicked] = useState(false)
 
   useEffect(() => {
-    if (welcomeHasShown == false) {
-      setIsClicked(false); // Reset the isClicked state
+    if (welcomeHasShown === false) {
+      setIsClicked(false) // Reset the isClicked state
     }
-  }, [welcomeHasShown]);
+  }, [welcomeHasShown])
 
   return (
     <div
-      className={styles.scoreEntryContainer}
+      className={
+        isLeaderboard
+          ? styles.leaderboardEntryContainer
+          : styles.scoreEntryContainer
+      }
       onClick={() => {
-        if (welcomeHasShown == false) return;
-        setIsClicked(true); // Set the isClicked state to true
-        handleClick(); // Call the handleClick function
+        if (welcomeHasShown === false || isClicked === true) return
+        setIsClicked(true) // Set the isClicked state to true
+        handleClick() // Call the handleClick function
       }}
     >
       <div className={styles.name}>{name}</div>
@@ -32,7 +43,7 @@ function ScoreEntry({ name, score, finalScore, handleClick, welcomeHasShown }) {
         }
       </div>
     </div>
-  );
+  )
 }
 
-export default ScoreEntry;
+export default ScoreEntry
