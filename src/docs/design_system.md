@@ -28,6 +28,11 @@ This document outlines the design system for the project.
 
 ![Score Board](./design_system/scoreBoard.png)
 
+#### Leader Board
+<br>
+
+![Leader Board](./design_system/leaderBoard.png)
+
 ### Welcome Screen
 
 ![Welcome Screen](./design_system/welcomeScreen.png)
